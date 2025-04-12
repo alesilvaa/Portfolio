@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AleCode - Game Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <canvas id="bg"></canvas>
+    
+    <div class="loading-screen">
+        <div class="loader"></div>
+        <p>Cargando experiencia...</p>
+    </div>
+    
+    <header>
+        <nav>
+            <div class="logo">AleCode</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Inicio</a>
+                <a href="#portfolio">Portafolio</a>
+                <a href="#about">Sobre mí</a>
+                <a href="#contact">Contacto</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home" class="hero-section">
+            <div class="content">
+                <div class="hero">
+                    <h1 class="glitch-text" data-text="Game Developer">Game Developer</h1>
+                    <p>Desarrollador de videojuegos con más de 3 años de experiencia en Unity y C#. Creando experiencias interactivas que cautivan a los jugadores.</p>
+                    <div class="cta-container">
+                        <a href="#portfolio" class="cta">Ver Proyectos</a>
+                        <a href="#contact" class="cta cta-secondary">Contactar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <div class="content">
+                <h2 class="section-title">Mi Portafolio</h2>
+                <div class="projects">
+                    <div class="project-card">
+                        <div class="project-image placeholder">
+                            <img src="IMG/idle Influcencer.jpg" alt="Idle Influcencer">
+                        </div>
+                        <h3>Idle Influcencer - Play Store</h3>
+                        <p>Juego 3D desarrollado con Unity y publicado en Google Play Store.</p>
+                        <div class="project-tags">
+                            <span>Unity</span>
+                            <span>C#</span>
+                            <span>3D</span>
+                        </div>
+                        <a href="https://play.google.com/store/apps/details?id=play.roshka.idleinfluencer&hl=es_PY" class="project-link">Ver más →</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image placeholder">
+                            <img src="IMG/Screwgame.png" alt="Screw-Puzzle">
+                        </div>
+                        <h3>Screw-Puzzle - GitHub</h3>
+                        <p>Unscrew the nuts and bolts from the pieces to win!</p>
+                        <div class="project-tags">
+                            <span>Unity</span>
+                            <span>C#</span>
+                            <span>3D</span>
+                        </div>
+                        <a href="https://github.com/alesilvaa/Screw-Puzzle" class="project-link">Ver más →</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image placeholder">
+                            <img src="IMG/Kids.png" alt="Kids Pool Party">
+                        </div>
+                        <h3>Kids Pool Party - GitHub</h3>
+                        <p>Clear the way in the pool!</p>
+                        <div class="project-tags">
+                            <span>Unity</span>
+                            <span>C#</span>
+                            <span>3D</span>
+                        </div>
+                        <a href="https://github.com/alesilvaa/Kids-Pool-Party" class="project-link">Ver más →</a>
+                    </div>
+                    <!-- <div class="project-card">
+                        <div class="project-image placeholder"></div>
+                        <h3>Demo WebGL</h3>
+                        <p>Una demostración jugable directamente en el navegador.</p>
+                        <div class="project-tags">
+                            <span>WebGL</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="#" class="project-link">Ver más →</a>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="about-section">
+            <div class="content">
+                <h2 class="section-title">Sobre Mí</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Soy un desarrollador de videojuegos apasionado con experiencia en Unity y C#.</p>
+                        <p>Me especializo en:</p>
+                        <ul class="skills-list">
+                            <li>Desarrollo de juegos con Unity</li>
+                            <li>Programación en C#</li>
+                            <li>Diseño de niveles</li>
+                            <li>Implementación de mecánicas de juego</li>
+                            <li>Optimización para dispositivos móviles</li>
+                        </ul>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Años de experiencia</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Juegos publicados</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Proyectos en GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact-section">
+            <div class="content">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <p>¿Interesado en trabajar juntos o tienes alguna pregunta?</p>
+                        <div class="contact-links">
+                            <a href="mailto:alejandroacostasilvapy@gmail.com" class="contact-link">
+                                <i class="fas fa-envelope"></i> alejandroacostasilvapy@gmail.com
+                            </a>
+                            <a href="https://github.com/alesilvaa" target="_blank" class="contact-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/alejandro-acosta-silva-534014222/" target="_blank" class="contact-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Tu email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Tu mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="cta">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="content">
+            <div class="footer-content">
+                <div class="footer-logo">AleCode</div>
+                <p class="footer-copyright">© 2025 AleCode. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/tu-usuario" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/tu-perfil" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/tu-usuario" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r132/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.min.js"></script>
+
+
+    
+    <script src="main.js"></script>
+</body>
+</html>
