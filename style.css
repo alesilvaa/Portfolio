@@ -300,14 +300,7 @@ section {
     gap: 2rem;
 }
 
-.project-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-}
+
 
 .project-card:hover {
     transform: translateY(-10px);
@@ -577,23 +570,14 @@ footer {
 .footer-links a:hover {
     color: var(--primary-color);
 }
-.carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding-bottom: 60px;
-}
 
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease;
 }
 
-.project-card {
-    flex: 0 0 100%;
-    margin-right: 0;
-    box-sizing: border-box;
-}
+
+
 
 .carousel-nav {
     display: flex;
@@ -671,35 +655,39 @@ footer {
     display: block;
 }
 /* Estilos para el carrusel */
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    margin: 2rem 0;
-    padding: 1rem 0;
-}
+
 
 .carousel-track {
     display: flex;
     transition: transform 0.3s ease-in-out;
-    cursor: grab;
-    width: 100%;
-}
+    will-change: transform;
+  }
 
 .carousel-track.grabbing {
     cursor: grabbing;
 }
 
 .project-card {
-    flex: 0 0 calc(33.333% - 2rem);
-    margin: 0 1rem;
-    border-radius: 12px;
-    overflow: hidden;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 1.5rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  flex: 0 0 auto;
+  width: 100%;
+  margin-right: 20px;
 }
+.gradient-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: inline-block;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 
 .project-card:hover {
     transform: translateY(-8px);
@@ -774,19 +762,14 @@ footer {
     margin-top: 2rem;
 }
 
+
 .carousel-container {
     position: relative;
     overflow: hidden;
-    margin: 2rem 0;
-    padding: 1rem 0;
     width: 100%;
-}
+    margin: 2rem 0;
+  }
 
-.carousel-track {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-    cursor: grab;
-}
 
 .carousel-track.grabbing {
     cursor: grabbing;
@@ -876,20 +859,15 @@ footer {
     transform: scale(1.2);
 }
 
-/* Responsive */
-@media (max-width: 1023px) {
+@media (min-width: 1024px) {
     .project-card {
-        flex: 0 0 calc(50% - 2rem);
+        max-width: calc(33.333% - 20px);
     }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
     .project-card {
-        flex: 0 0 calc(100% - 2rem);
-    }
-    
-    .project-image {
-        height: 160px;
+        max-width: calc(50% - 20px);
     }
 }
 

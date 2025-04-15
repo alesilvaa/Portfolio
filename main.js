@@ -94,8 +94,9 @@ function crearChips() {
 
 // Configurar fondo
 function configurarFondo() {
-    scene.background = new THREE.Color(0x000000);
-    scene.fog = new THREE.Fog(0x000000, 50, 100);
+scene.background = new THREE.Color(0x080808); 
+scene.fog = new THREE.Fog(0x080808, 30, 80);  
+
 }
 
 // Crear objetos 3D simplificados
@@ -171,9 +172,9 @@ function crearEstrellasMejoradas() {
         const starMaterial = new THREE.MeshStandardMaterial({
             color: color,
             emissive: color,
-            emissiveIntensity: 0.5,
+            emissiveIntensity: 0.2, // menos brillo
             transparent: true,
-            opacity: Math.random() * 0.5 + 0.5
+            opacity: 0.2 + Math.random() * 0.3 // más tenue
         });
         
         const star = new THREE.Mesh(starGeometry, starMaterial);
@@ -256,8 +257,10 @@ function animate() {
     targetY = mouseY * 0.3;
     
     // Rotar la cámara para seguir el mouse
-    camera.position.x += (targetX - camera.position.x) * 0.05;
-    camera.position.y += (-targetY - camera.position.y) * 0.05;
+    // camera.position.x += (targetX - camera.position.x) * 0.05;
+    // camera.position.y += (-targetY - camera.position.y) * 0.05;
+    camera.position.x = 0;
+    camera.position.y = 0;
     camera.lookAt(scene.position);
     
     // Animar objetos 3D

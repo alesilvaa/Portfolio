@@ -37,7 +37,7 @@
             <div class="content">
                 <div class="hero">
                     <h1 class="glitch-text" data-text="Game Developer">Game Developer</h1>
-                    <p>Hi, I'm Alejandro Acosta, Game developer with more than 3 years of experience in Unity and C#.</p>
+                    <p>Hi, I'm <span class="gradient-text">Alejandro Acosta</span>, with more than 3 years of experience in Unity and C#.</p>
                     <div class="cta-container">
                         <a href="#portfolio" class="cta">View Projects</a>
                         <a href="#contact" class="cta cta-secondary">Contact me</a>
@@ -131,6 +131,19 @@
                     </div>
                     <a href="https://github.com/alesilvaa/Alice-Express-Game" class="project-link">See more →</a>
                 </div>
+                <div class="project-card">
+                    <div class="project-image placeholder">
+                        <img src="IMG/shotandbuild.jpg" alt="Shoot And Build">
+                    </div>
+                    <h3>Shoot and Build - Play Store</h3>
+                    <p>Shoot and build new tile walls for the house and unlock new and more fun weapons!</p>
+                    <div class="project-tags">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>3D</span>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=play.roshka.shootandbuild&hl=es_PY" class="project-link">See more →</a>
+                </div>
             </div>
             
             <div class="carousel-nav">
@@ -166,13 +179,13 @@
                             <span class="stat-number">3+</span>
                             <span class="stat-label">Years of experience</span>
                         </div>
-                        <div class="stat">
+                        <!-- <div class="stat">
                             <span class="stat-number">3</span>
                             <span class="stat-label">Published games</span>
-                        </div>
+                        </div> -->
                         <div class="stat">
                             <span class="stat-number">10+</span>
-                            <span class="stat-label">GitHub projects</span>
+                            <span class="stat-label">Projects</span>
                         </div>
                     </div>
                 </div>
@@ -197,15 +210,15 @@
                             </a>
                         </div>
                     </div>
-                    <form class="contact-form">
+                    <form class="contact-form" action="https://formspree.io/f/xzzewgng" method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Your name" required>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Your email" required>
+                            <input type="email" id="email" name="email" placeholder="Your email" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Your message" required></textarea>
+                            <textarea id="message" name="message" placeholder="Your message" required></textarea>
                         </div>
                         <button type="submit" class="cta">Send message</button>
                     </form>
@@ -325,13 +338,9 @@
         // Calcular la posición exacta para este índice
         // Si es la última diapositiva, asegurarse de que termine exactamente al final
         let slideOffset;
-        if (index === maxSlides - 1 && maxSlides > 1) {
-            // Esta es la clave: para la última diapositiva, calcular el desplazamiento
-            // para que la última tarjeta esté completamente visible
-            slideOffset = trackWidth - (cardWidth * visibleCards) - (cardMargin * (visibleCards - 1));
-        } else {
-            slideOffset = index * (cardWidth + cardMargin);
-        }
+        const totalVisibleWidth = (cardWidth * visibleCards) + (cardMargin * (visibleCards - 1));
+        const maxOffset = Math.max(0, trackWidth - totalVisibleWidth);
+        slideOffset = Math.min(index * (cardWidth + cardMargin), maxOffset);
         
         currentTranslate = -slideOffset;
 
