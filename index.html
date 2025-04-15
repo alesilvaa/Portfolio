@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
     
     <div class="loading-screen">
         <div class="loader"></div>
-        <p>Cargando experiencia...</p>
+        <p>Loading experience...</p>
     </div>
     
     <header>
@@ -24,10 +24,10 @@
                 <span></span>
             </div>
             <div class="nav-links" id="navLinks">
-                <a href="#home">Inicio</a>
-                <a href="#portfolio">Portafolio</a>
-                <a href="#about">Sobre mí</a>
-                <a href="#contact">Contacto</a>
+                <a href="#home">Home</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#about">About me</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
     </header>
@@ -37,99 +37,142 @@
             <div class="content">
                 <div class="hero">
                     <h1 class="glitch-text" data-text="Game Developer">Game Developer</h1>
-                    <p>Desarrollador de videojuegos con más de 3 años de experiencia en Unity y C#. Creando experiencias interactivas que cautivan a los jugadores.</p>
+                    <p>Hi, I'm Alejandro Acosta, Game developer with more than 3 years of experience in Unity and C#.</p>
                     <div class="cta-container">
-                        <a href="#portfolio" class="cta">Ver Proyectos</a>
-                        <a href="#contact" class="cta cta-secondary">Contactar</a>
+                        <a href="#portfolio" class="cta">View Projects</a>
+                        <a href="#contact" class="cta cta-secondary">Contact me</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio" class="portfolio-section">
-            <div class="content">
-                <h2 class="section-title">Mi Portafolio</h2>
-                <div class="projects">
-                    <div class="project-card">
-                        <div class="project-image placeholder">
-                            <img src="IMG/idle Influcencer.jpg" alt="Idle Influcencer">
-                        </div>
-                        <h3>Idle Influcencer - Play Store</h3>
-                        <p>Juego 3D desarrollado con Unity y publicado en Google Play Store.</p>
-                        <div class="project-tags">
-                            <span>Unity</span>
-                            <span>C#</span>
-                            <span>3D</span>
-                        </div>
-                        <a href="https://play.google.com/store/apps/details?id=play.roshka.idleinfluencer&hl=es_PY" class="project-link">Ver más →</a>
+<section id="portfolio" class="portfolio-section">
+    <div class="content">
+        <h2 class="section-title">My Portfolio</h2>
+        
+        <div class="carousel-container">
+            <div class="carousel-track" id="projectsCarousel">
+                <div class="project-card">
+                    <div class="project-image placeholder">
+                        <img src="IMG/idle Influcencer.jpg" alt="Idle Influcencer">
                     </div>
-                    <div class="project-card">
-                        <div class="project-image placeholder">
-                            <img src="IMG/Screwgame.png" alt="Screw-Puzzle">
-                        </div>
-                        <h3>Screw-Puzzle - GitHub</h3>
-                        <p>Unscrew the nuts and bolts from the pieces to win!</p>
-                        <div class="project-tags">
-                            <span>Unity</span>
-                            <span>C#</span>
-                            <span>3D</span>
-                        </div>
-                        <a href="https://github.com/alesilvaa/Screw-Puzzle" class="project-link">Ver más →</a>
+                    <h3>Idle Influcencer - Play Store</h3>
+                    <p>3D game developed with Unity and published on Google Play Store.</p>
+                    <div class="project-tags">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>3D</span>
                     </div>
-                    <div class="project-card">
-                        <div class="project-image placeholder">
-                            <img src="IMG/Kids.png" alt="Kids Pool Party">
-                        </div>
-                        <h3>Kids Pool Party - GitHub</h3>
-                        <p>Clear the way in the pool!</p>
-                        <div class="project-tags">
-                            <span>Unity</span>
-                            <span>C#</span>
-                            <span>3D</span>
-                        </div>
-                        <a href="https://github.com/alesilvaa/Kids-Pool-Party" class="project-link">Ver más →</a>
+                    <a href="https://play.google.com/store/apps/details?id=play.roshka.idleinfluencer&hl=es_PY" class="project-link">See more →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image placeholder">
+                        <img src="IMG/Screwgame.png" alt="Screw-Puzzle">
                     </div>
-                    <!-- <div class="project-card">
-                        <div class="project-image placeholder"></div>
-                        <h3>Demo WebGL</h3>
-                        <p>Una demostración jugable directamente en el navegador.</p>
-                        <div class="project-tags">
-                            <span>WebGL</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <a href="#" class="project-link">Ver más →</a>
-                    </div> -->
+                    <h3>Screw-Puzzle - GitHub</h3>
+                    <p>Unscrew the nuts and bolts from the pieces to win!</p>
+                    <div class="project-tags">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>3D</span>
+                    </div>
+                    <a href="https://github.com/alesilvaa/Screw-Puzzle" class="project-link">See more →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image placeholder">
+                        <img src="IMG/FRX.png" alt="Factory Revolution Puzzle">
+                    </div>
+                    <h3>Factory Revolution Puzzle - GitHub</h3>
+                    <p>Solve puzzles to improve your logical thinking skills! Tap to rotate the ramps and make it work!</p>
+                    <div class="project-tags">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>3D</span>
+                    </div>
+                    <a href="https://github.com/alesilvaa/FactoryRevolutionPuzzle" class="project-link">See more →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image placeholder">
+                        <img src="IMG/Kids.png" alt="Kids Pool Party">
+                    </div>
+                    <h3>Kids Pool Party - GitHub</h3>
+                    <p>Clear the way in the pool!</p>
+                    <div class="project-tags">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>3D</span>
+                    </div>
+                    <a href="https://github.com/alesilvaa/Kids-Pool-Party" class="project-link">See more →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image placeholder">
+                        <img src="IMG/bedtesta.jpg" alt="Bed Tester">
+                    </div>
+                    <h3>Bed Tester - Play Store</h3>
+                    <p>A hypercasual game where the player tests beds to their limits to ensure comfort. Simple, fun, and with an original premise.</p>
+                    <div class="project-tags">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>3D</span>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=play.roshka.bedtester&hl=es_PY" class="project-link">See more →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image placeholder">
+                        <img src="IMG/AliceExpress.png" alt="Alice Express">
+                    </div>
+                    <h3>Alice Express Game - GitHub</h3>
+                    <p>A unique puzzle experience! Clear the path and place the boxes of the correct color.</p>
+                    <div class="project-tags">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>3D</span>
+                    </div>
+                    <a href="https://github.com/alesilvaa/Alice-Express-Game" class="project-link">See more →</a>
                 </div>
             </div>
-        </section>
+            
+            <div class="carousel-nav">
+                <button class="carousel-button prev-button" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-dots" id="carouselDots"></div>
+                <button class="carousel-button next-button" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
         
         <section id="about" class="about-section">
             <div class="content">
-                <h2 class="section-title">Sobre Mí</h2>
+                <h2 class="section-title">About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Soy un desarrollador de videojuegos apasionado con experiencia en Unity y C#.</p>
-                        <p>Me especializo en:</p>
+                        <p>I am a passionate game developer with experience in Unity and C#.</p>
+                        <p>I specialize in:</p>
                         <ul class="skills-list">
-                            <li>Desarrollo de juegos con Unity</li>
-                            <li>Programación en C#</li>
-                            <li>Diseño de niveles</li>
-                            <li>Implementación de mecánicas de juego</li>
-                            <li>Optimización para dispositivos móviles</li>
+                            <li>Game development with Unity</li>
+                            <li>C# programming</li>
+                            <li>Level design</li>
+                            <li>Game mechanics implementation</li>
+                            <li>Mobile device optimization</li>
                         </ul>
                     </div>
                     <div class="about-stats">
                         <div class="stat">
                             <span class="stat-number">3+</span>
-                            <span class="stat-label">Años de experiencia</span>
+                            <span class="stat-label">Years of experience</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">3</span>
-                            <span class="stat-label">Juegos publicados</span>
+                            <span class="stat-label">Published games</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">10+</span>
-                            <span class="stat-label">Proyectos en GitHub</span>
+                            <span class="stat-label">GitHub projects</span>
                         </div>
                     </div>
                 </div>
@@ -138,10 +181,10 @@
         
         <section id="contact" class="contact-section">
             <div class="content">
-                <h2 class="section-title">Contacto</h2>
+                <h2 class="section-title">Contact</h2>
                 <div class="contact-container">
                     <div class="contact-info">
-                        <p>¿Interesado en trabajar juntos o tienes alguna pregunta?</p>
+                        <p>Interested in working together or have any questions?</p>
                         <div class="contact-links">
                             <a href="mailto:alejandroacostasilvapy@gmail.com" class="contact-link">
                                 <i class="fas fa-envelope"></i> alejandroacostasilvapy@gmail.com
@@ -156,15 +199,15 @@
                     </div>
                     <form class="contact-form">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Tu nombre" required>
+                            <input type="text" id="name" placeholder="Your name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Tu email" required>
+                            <input type="email" id="email" placeholder="Your email" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Tu mensaje" required></textarea>
+                            <textarea id="message" placeholder="Your message" required></textarea>
                         </div>
-                        <button type="submit" class="cta">Enviar mensaje</button>
+                        <button type="submit" class="cta">Send message</button>
                     </form>
                 </div>
             </div>
@@ -175,7 +218,7 @@
         <div class="content">
             <div class="footer-content">
                 <div class="footer-logo">AleCode</div>
-                <p class="footer-copyright">© 2025 AleCode. Todos los derechos reservados.</p>
+                <p class="footer-copyright">© 2025 AleCode. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="https://github.com/tu-usuario" target="_blank">
                         <i class="fab fa-github"></i>
@@ -195,7 +238,246 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.min.js"></script>
 
 
+    <script>
+        function initProjectCarousel() {
+    const track = document.getElementById('projectsCarousel');
+    const cards = Array.from(track.querySelectorAll('.project-card'));
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevBtn = document.querySelector('.prev-button');
+    const nextBtn = document.querySelector('.next-button');
+    const carouselContainer = document.querySelector('.carousel-container');
+
+    let currentSlide = 0;
+    let visibleCards = 1;
+    let cardWidth = 0;
+    let cardMargin = 20; // Margen entre tarjetas
+    let trackWidth = 0;
+    let autoplayInterval;
+    let isDragging = false;
+    let startX = 0;
+    let startTranslate = 0;
+    let currentTranslate = 0;
+
+    // Calcular dimensiones y configurar el carrusel
+    const updateCarouselDimensions = () => {
+        // Determinar cuántas tarjetas mostrar según el ancho de la ventana
+        if (window.innerWidth >= 1024) {
+            visibleCards = 3;
+        } else if (window.innerWidth >= 768) {
+            visibleCards = 2;
+        } else {
+            visibleCards = 1;
+        }
+
+        // Calcular el ancho de cada tarjeta basado en el contenedor y el número visible
+        const containerWidth = carouselContainer.clientWidth;
+        cardWidth = (containerWidth - (cardMargin * (visibleCards - 1))) / visibleCards;
+        
+        // Configurar cada tarjeta con el ancho calculado
+        cards.forEach(card => {
+            card.style.flex = `0 0 ${cardWidth}px`;
+            card.style.width = `${cardWidth}px`;
+            card.style.marginRight = `${cardMargin}px`;
+        });
+        
+        // Última tarjeta sin margen derecho
+        if (cards.length > 0) {
+            cards[cards.length - 1].style.marginRight = '0';
+        }
+
+        // Calcular ancho total del track
+        trackWidth = (cardWidth * cards.length) + (cardMargin * (cards.length - 1));
+        track.style.width = `${trackWidth}px`;
+
+        // Actualizar posición actual
+        goToSlide(currentSlide, false);
+        updateDots();
+    };
+
+    // Crear y actualizar los indicadores de puntos
+    const updateDots = () => {
+        dotsContainer.innerHTML = '';
+        const maxSlides = calculateMaxSlides();
+        
+        for (let i = 0; i < maxSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'carousel-dot' + (i === currentSlide ? ' active' : '');
+            dot.addEventListener('click', () => goToSlide(i, true));
+            dotsContainer.appendChild(dot);
+        }
+    };
     
+    // Calcular el número máximo de diapositivas
+    const calculateMaxSlides = () => {
+        return Math.max(1, cards.length - visibleCards + 1);
+    };
+
+    // Ir a una diapositiva específica
+    const goToSlide = (index, animate = true) => {
+        const maxSlides = calculateMaxSlides();
+        
+        // Control de límites
+        if (index < 0) index = 0;
+        if (index >= maxSlides) index = maxSlides - 1;
+
+        currentSlide = index;
+        
+        // Calcular la posición exacta para este índice
+        // Si es la última diapositiva, asegurarse de que termine exactamente al final
+        let slideOffset;
+        if (index === maxSlides - 1 && maxSlides > 1) {
+            // Esta es la clave: para la última diapositiva, calcular el desplazamiento
+            // para que la última tarjeta esté completamente visible
+            slideOffset = trackWidth - (cardWidth * visibleCards) - (cardMargin * (visibleCards - 1));
+        } else {
+            slideOffset = index * (cardWidth + cardMargin);
+        }
+        
+        currentTranslate = -slideOffset;
+
+        // Aplicar la transformación con o sin animación
+        track.style.transition = animate ? 'transform 0.3s ease-in-out' : 'none';
+        track.style.transform = `translateX(${currentTranslate}px)`;
+        
+        // Actualizar indicadores de puntos
+        Array.from(dotsContainer.children).forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+        
+        // Si no hay animación, forzar reflow y restaurar la transición
+        if (!animate) {
+            track.offsetHeight; // Forzar reflow
+            track.style.transition = 'transform 0.3s ease-in-out';
+        }
+    };
+
+    // Funciones de reproducción automática
+    const startAutoplay = () => {
+        stopAutoplay();
+        autoplayInterval = setInterval(() => {
+            let nextSlide = currentSlide + 1;
+            const maxSlides = calculateMaxSlides();
+            if (nextSlide >= maxSlides) nextSlide = 0;
+            goToSlide(nextSlide, true);
+        }, 5000);
+    };
+
+    const stopAutoplay = () => {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+    };
+
+    // Funciones para arrastrar (drag)
+    function dragStart(event) {
+        stopAutoplay();
+        isDragging = true;
+        startX = getPositionX(event);
+        startTranslate = currentTranslate;
+        
+        track.style.transition = 'none';
+        track.classList.add('grabbing');
+    }
+
+    function dragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        track.classList.remove('grabbing');
+        
+        track.style.transition = 'transform 0.3s ease-in-out';
+        
+        const moveBy = currentTranslate - startTranslate;
+        const threshold = cardWidth * 0.2; // 20% del ancho de la tarjeta
+        
+        if (moveBy < -threshold) {
+            goToSlide(currentSlide + 1, true);
+        } else if (moveBy > threshold) {
+            goToSlide(currentSlide - 1, true);
+        } else {
+            goToSlide(currentSlide, true); // Volver a la posición actual
+        }
+        
+        startAutoplay();
+    }
+
+    function dragMove(event) {
+        if (!isDragging) return;
+        
+        const currentX = getPositionX(event);
+        const diff = currentX - startX;
+        currentTranslate = startTranslate + diff;
+        
+        // Aplicar límites con efecto de resistencia
+        const maxTranslate = 0;
+        const minTranslate = -(trackWidth - (visibleCards * cardWidth) - (visibleCards - 1) * cardMargin);
+        
+        if (currentTranslate > maxTranslate) {
+            currentTranslate = maxTranslate + (currentTranslate - maxTranslate) * 0.3;
+        } else if (currentTranslate < minTranslate) {
+            currentTranslate = minTranslate + (currentTranslate - minTranslate) * 0.3;
+        }
+        
+        track.style.transform = `translateX(${currentTranslate}px)`;
+    }
+
+    function getPositionX(event) {
+        return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
+    }
+
+    // Event listeners
+    prevBtn.addEventListener('click', () => {
+        goToSlide(currentSlide - 1, true);
+        stopAutoplay();
+        setTimeout(startAutoplay, 5000);
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        goToSlide(currentSlide + 1, true);
+        stopAutoplay();
+        setTimeout(startAutoplay, 5000);
+    });
+    
+    // Listeners para arrastrar
+    track.addEventListener('mousedown', dragStart);
+    window.addEventListener('mouseup', dragEnd);
+    window.addEventListener('mousemove', dragMove);
+    
+    track.addEventListener('touchstart', dragStart, { passive: true });
+    window.addEventListener('touchend', dragEnd);
+    window.addEventListener('touchmove', dragMove, { passive: false });
+    
+    // Prevenir comportamiento por defecto en touch para evitar scroll
+    track.addEventListener('touchmove', (e) => {
+        if (isDragging) e.preventDefault();
+    }, { passive: false });
+    
+    // Detener autoplay al hover
+    track.addEventListener('mouseenter', stopAutoplay);
+    track.addEventListener('mouseleave', startAutoplay);
+    
+    // Listener para redimensionar
+    window.addEventListener('resize', () => {
+        updateCarouselDimensions();
+        startAutoplay();
+    });
+    
+    // Inicializar el carrusel
+    updateCarouselDimensions();
+    startAutoplay();
+}
+
+// Iniciar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    // Primero ocultamos la pantalla de carga
+    const loadingScreen = document.querySelector('.loading-screen');
+    if (loadingScreen) {
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+        }, 1000);
+    }
+    
+    // Inicializamos el carrusel
+    initProjectCarousel();
+});
+    </script>
     <script src="main.js"></script>
 </body>
 </html>

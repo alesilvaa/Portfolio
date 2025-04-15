@@ -5,6 +5,9 @@ let mouseX = 0, mouseY = 0;
 let targetX = 0, targetY = 0;
 let clock;
 
+let particleSystem;
+let pixeladoMaterial;
+
 // DOM
 const loadingScreen = document.querySelector('.loading-screen');
 const navToggle = document.getElementById('navToggle');
@@ -40,13 +43,19 @@ function init() {
 
     configurarFondo();
     crearObjetos3D();
+    configurarEventos();
     crearEstrellasMejoradas();
     crearChips();
-    configurarEventos();
+    
+    // Inicia la animación
     animate();
     animateCameraIntro();
 
-    setTimeout(() => loadingScreen?.classList.add('hidden'), 1500);
+    // Oculta la pantalla de carga después de 1.5 segundos
+    setTimeout(() => {
+        if (loadingScreen) loadingScreen.classList.add('hidden');
+        console.log("Pantalla de carga oculta");
+    }, 1500);
 }
 
 function animateCameraIntro() {
@@ -58,30 +67,38 @@ function animateCameraIntro() {
 }
 
 function crearChips() {
-    const chipTexture = new THREE.TextureLoader().load('img/chip-icon.png');
+    // Simplificamos para evitar cargar texturas que podrían fallar
     const chipGeometry = new THREE.PlaneGeometry(1, 1);
-    const chipMaterial = new THREE.MeshBasicMaterial({ map: chipTexture, transparent: true, depthWrite: false });
+    const chipMaterial = new THREE.MeshBasicMaterial({ 
+        color: 0x00ff9d, 
+        transparent: true, 
+        depthWrite: false 
+    });
+    
     for (let i = 0; i < 15; i++) {
         const chip = new THREE.Mesh(chipGeometry, chipMaterial);
-        chip.position.set(THREE.MathUtils.randFloatSpread(30), THREE.MathUtils.randFloatSpread(30), THREE.MathUtils.randFloatSpread(30));
+        chip.position.set(
+            THREE.MathUtils.randFloatSpread(30), 
+            THREE.MathUtils.randFloatSpread(30), 
+            THREE.MathUtils.randFloatSpread(30)
+        );
         chip.rotation.z = Math.random() * Math.PI;
         scene.add(chip);
-        stars.push({ mesh: chip, speed: 0.01 + Math.random() * 0.03, pulse: 0.001 + Math.random() * 0.003 });
+        stars.push({ 
+            mesh: chip, 
+            speed: 0.01 + Math.random() * 0.03, 
+            pulse: 0.001 + Math.random() * 0.003 
+        });
     }
 }
 
-
 // Configurar fondo
 function configurarFondo() {
-    // Crear un degradado de color para el fondo
-    const colorTop = new THREE.Color(0x000510);
-    const colorBottom = new THREE.Color(0x200030);
-    
     scene.background = new THREE.Color(0x000000);
     scene.fog = new THREE.Fog(0x000000, 50, 100);
 }
 
-// Crear objetos 3D más apropiados para un portfolio de game developer
+// Crear objetos 3D simplificados
 function crearObjetos3D() {
     // Cubo con efecto de videojuego
     const cuboGeometry = new THREE.BoxGeometry(3, 3, 3);
@@ -94,6 +111,7 @@ function crearObjetos3D() {
         transparent: true,
         opacity: 0.9
     });
+    
     const cubo = new THREE.Mesh(cuboGeometry, cuboMaterial);
     cubo.position.set(-15, 0, -10);
     cubo.castShadow = true;
@@ -116,6 +134,7 @@ function crearObjetos3D() {
         emissive: 0x001133,
         emissiveIntensity: 0.5
     });
+    
     const torus = new THREE.Mesh(torusGeometry, torusMaterial);
     torus.position.set(15, 0, -15);
     torus.userData = { tipo: 'Game Asset: Anillo' };
@@ -126,75 +145,6 @@ function crearObjetos3D() {
             x: 0.01,
             y: 0.005,
             z: 0
-        }
-    });
-    
-    // Esfera
-    const sphereGeometry = new THREE.SphereGeometry(2, 32, 32);
-    const sphereMaterial = new THREE.MeshStandardMaterial({
-        color: 0xff00c3,
-        wireframe: true,
-        emissive: 0x330033,
-        emissiveIntensity: 0.5
-    });
-    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-    sphere.position.set(0, 8, -5);
-    sphere.userData = { tipo: 'Game Asset: Esfera' };
-    scene.add(sphere);
-    objetos3D.push({
-        mesh: sphere,
-        rotationSpeed: {
-            x: 0.005,
-            y: 0,
-            z: 0.01
-        }
-    });
-    
-    // Octaedro
-    const octaGeometry = new THREE.OctahedronGeometry(2, 0);
-    const octaMaterial = new THREE.MeshStandardMaterial({
-        color: 0xffcc00,
-        wireframe: true,
-        emissive: 0x332200,
-        emissiveIntensity: 0.5
-    });
-    const octa = new THREE.Mesh(octaGeometry, octaMaterial);
-    octa.position.set(-10, -8, -20);
-    octa.userData = { tipo: 'Game Asset: Octaedro' };
-    scene.add(octa);
-    objetos3D.push({
-        mesh: octa,
-        rotationSpeed: {
-            x: 0.01,
-            y: 0.02,
-            z: 0.005
-        }
-    });
-    
-    // Dodecaedro (gema de poder)
-    const dodeGeometry = new THREE.DodecahedronGeometry(2, 0);
-    const dodeMaterial = new THREE.MeshStandardMaterial({
-        color: 0x00ffcc,
-        emissive: 0x00332a,
-        emissiveIntensity: 0.5,
-        transparent: true,
-        opacity: 0.8
-    });
-    const dode = new THREE.Mesh(dodeGeometry, dodeMaterial);
-    dode.position.set(10, -8, -15);
-    dode.userData = { tipo: 'Game Asset: Gema' };
-    
-    // Luz para la gema
-    const crystalLight = new THREE.PointLight(0x00ffcc, 1, 10);
-    dode.add(crystalLight);
-    
-    scene.add(dode);
-    objetos3D.push({
-        mesh: dode,
-        rotationSpeed: {
-            x: 0.005,
-            y: 0.01,
-            z: 0.015
         }
     });
 }
@@ -287,65 +237,6 @@ function configurarEventos() {
             if (nav) nav.classList.remove('nav-scrolled');
         }
     });
-    
-    // Interactividad con los objetos 3D
-    const raycaster = new THREE.Raycaster();
-    const mouse = new THREE.Vector2();
-    const tooltip = document.createElement('div');
-    tooltip.style.position = 'absolute';
-    tooltip.style.color = 'white';
-    tooltip.style.padding = '8px 12px';
-    tooltip.style.background = 'rgba(0, 0, 0, 0.8)';
-    tooltip.style.pointerEvents = 'none';
-    tooltip.style.borderRadius = '5px';
-    tooltip.style.display = 'none';
-    tooltip.style.fontFamily = 'Arial, sans-serif';
-    tooltip.style.fontSize = '14px';
-    tooltip.style.boxShadow = '0 0 10px rgba(0, 200, 255, 0.5)';
-    tooltip.style.border = '1px solid rgba(0, 200, 255, 0.5)';
-    tooltip.style.zIndex = '1000';
-    document.body.appendChild(tooltip);
-    
-    window.addEventListener('mousemove', (event) => {
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-        
-        raycaster.setFromCamera(mouse, camera);
-        const intersects = raycaster.intersectObjects(scene.children, true);
-        
-        let found = false;
-        
-        // Buscar el objeto padre con userData
-        for (let i = 0; i < intersects.length; i++) {
-            let object = intersects[i].object;
-            while (object && !object.userData.tipo) {
-                object = object.parent;
-            }
-            
-            if (object && object.userData.tipo) {
-                tooltip.style.display = 'block';
-                tooltip.style.left = event.clientX + 10 + 'px';
-                tooltip.style.top = event.clientY + 10 + 'px';
-                tooltip.textContent = object.userData.tipo;
-                
-                // Iluminar objeto al pasar el mouse
-                object.material.emissiveIntensity = 1;
-                found = true;
-                break;
-            }
-        }
-        
-        if (!found) {
-            tooltip.style.display = 'none';
-            
-            // Restablecer brillo
-            objetos3D.forEach(objeto => {
-                if (objeto.mesh.material) {
-                    objeto.mesh.material.emissiveIntensity = 0.5;
-                }
-            });
-        }
-    });
 }
 
 // Función para alternar menú móvil
@@ -413,4 +304,7 @@ function animate() {
 }
 
 // Iniciar la aplicación cuando se carga la ventana
-window.addEventListener('load', init);
+window.addEventListener('load', () => {
+    console.log("Window loaded");
+    init();
+});
