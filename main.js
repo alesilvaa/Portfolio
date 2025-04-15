@@ -45,7 +45,7 @@ function init() {
     crearObjetos3D();
     configurarEventos();
     crearEstrellasMejoradas();
-    crearChips();
+    //crearChips();
     
     // Inicia la animación
     animate();
@@ -94,7 +94,7 @@ function crearChips() {
 
 // Configurar fondo
 function configurarFondo() {
-scene.background = new THREE.Color(0x080808); 
+scene.background = new THREE.Color(0x00000); 
 scene.fog = new THREE.Fog(0x080808, 30, 80);  
 
 }
