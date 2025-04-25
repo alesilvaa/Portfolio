@@ -639,7 +639,7 @@ footer {
 
 .project-image {
     width: 100%;
-    height: 310px; /* Ajustá la altura deseada aquí */
+    height: 410px; /* Ajustá la altura deseada aquí */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -1004,4 +1004,15 @@ footer {
         text-align: center;
         gap: 1.5rem;
     }
+}
+.project-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Opcional: estilo para cuando se está cargando el video */
+.project-image video:-webkit-loading {
+    background-color: #f0f0f0;
 }
