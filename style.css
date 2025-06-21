@@ -368,8 +368,7 @@ section {
     background: var(--card-bg);
     border-radius: 15px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    position: relative;
     transition: var(--transition-smooth);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -383,7 +382,7 @@ section {
 
 .project-image {
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 100%; /* 1:1 Aspect Ratio */
     position: relative;
     overflow: hidden;
 }
@@ -405,25 +404,43 @@ section {
 }
 
 .project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Allows this to fill space */
+    background: linear-gradient(0deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.8) 40%, transparent 100%);
+    transform: translateY(calc(100% - 110px));
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-item:hover .project-info {
+    transform: translateY(0);
 }
 
 .project-info h3 {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
-    background: var(--gradient-secondary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--text-light);
+}
+
+.project-info p,
+.project-info .project-tags,
+.project-info .project-link {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+.project-item:hover .project-info p,
+.project-item:hover .project-info .project-tags,
+.project-item:hover .project-info .project-link {
+    opacity: 1;
+    transition-delay: 0.25s;
 }
 
 .project-info p {
     color: var(--text-gray);
     margin-bottom: 1rem;
-    flex-grow: 1; /* Pushes tags and link to the bottom */
 }
 
 .project-tags {
@@ -452,8 +469,6 @@ section {
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
-    align-self: flex-start; /* Align link to the left */
-    margin-top: auto; /* Pushes link to the bottom */
     position: relative;
 }
 
