@@ -566,20 +566,32 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
     background: var(--card-bg);
     padding: 4rem;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.contact-info h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .contact-info p {
     margin-bottom: 2rem;
-    max-width: 400px;
+    color: var(--text-gray);
+    line-height: 1.7;
 }
 
 .contact-links {
     display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
@@ -589,28 +601,37 @@ section {
     gap: 1rem;
     color: var(--text-light);
     text-decoration: none;
-    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
     transition: var(--transition-smooth);
 }
 
 .contact-link:hover {
-    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    color: var(--text-light);
 }
 
 .contact-link i {
-    font-size: 1.5rem;
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+    font-size: 1.8rem;
+    color: var(--primary-color);
     transition: var(--transition-smooth);
 }
 
+.contact-link h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.contact-link span {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
 .contact-link:hover i {
-    background: var(--primary-color);
-    color: var(--background-dark);
+    transform: scale(1.1);
 }
 
 .contact-form {
@@ -626,7 +647,7 @@ section {
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem 1rem 0.8rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -644,7 +665,25 @@ section {
 
 .contact-form textarea {
     resize: vertical;
-    min-height: 150px;
+    min-height: 120px;
+}
+
+.contact-form label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--text-gray);
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+}
+
+.contact-form input:focus ~ label,
+.contact-form input:not(:placeholder-shown) ~ label,
+.contact-form textarea:focus ~ label,
+.contact-form textarea:not(:placeholder-shown) ~ label {
+    top: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--primary-color);
 }
 
 .contact-form .cta {
