@@ -462,6 +462,16 @@ section {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
     color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.project-info h3 i {
+    font-size: 1.7rem;
+    color: var(--text-gray);
+    transition: var(--transition-smooth);
 }
 
 .project-info p,
@@ -476,6 +486,88 @@ section {
 .project-item:hover .project-info .project-link {
     opacity: 1;
     transition-delay: 0.25s;
+}
+
+.project-item:hover .project-info h3 i {
+    color: var(--primary-color);
+}
+
+.platform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.platform-badge i {
+    font-size: 1.2em;
+    transition: var(--transition-smooth);
+}
+
+.platform-badge.apple {
+    background-color: #1c1c1e;
+    border-color: #3a3a3c;
+    color: #f5f5f7;
+}
+.platform-badge.apple i {
+    color: #f5f5f7;
+}
+
+.platform-badge.google-play {
+    background-color: #24292e;
+    border-color: #444d56;
+    color: #3ddc84;
+}
+.platform-badge.google-play i {
+    color: #3ddc84;
+}
+
+.platform-badge.github {
+    background-color: #24292e;
+    border-color: #444d56;
+    color: #f6f8fa;
+}
+.platform-badge.github i {
+    color: #f6f8fa;
+}
+
+.project-item:hover .platform-badge {
+    transform: translateY(-2px) scale(1.05);
+}
+
+.project-item:hover .platform-badge.apple {
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(245, 245, 247, 0.2);
+}
+.project-item:hover .platform-badge.apple i {
+    color: #1d1d1f;
+}
+
+.project-item:hover .platform-badge.google-play {
+    background-color: #3ddc84;
+    color: var(--background-dark);
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(61, 220, 132, 0.3);
+}
+.project-item:hover .platform-badge.google-play i {
+    color: var(--background-dark);
+}
+
+.project-item:hover .platform-badge.github {
+    background-color: #f6f8fa;
+    color: #24292e;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(246, 248, 250, 0.2);
+}
+.project-item:hover .platform-badge.github i {
+    color: #24292e;
 }
 
 .project-info p {
