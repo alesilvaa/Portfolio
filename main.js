@@ -1,7 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
     const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
+    const navLinksContainer = document.getElementById('navLinks');
+
+    // Section highlighting logic
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const activateLink = (id) => {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                activateLink(entry.target.id);
+            }
+        });
+    }, { rootMargin: '-30% 0px -70% 0px' });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+    // End of section highlighting logic
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -14,15 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            navLinksContainer.classList.toggle('active');
         });
     }
 
     const links = document.querySelectorAll('.nav-links a');
     links.forEach(link => {
         link.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
+            if (navLinksContainer.classList.contains('active')) {
+                navLinksContainer.classList.remove('active');
                 navToggle.classList.remove('active');
             }
         });
