@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loadingScreen = document.querySelector('.loading-screen');
-    window.addEventListener('load', () => {
-        loadingScreen.classList.add('hidden');
-    });
-
     const nav = document.querySelector('nav');
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
@@ -18,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (navToggle) {
         navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
     }
@@ -27,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
+                navToggle.classList.remove('active');
             }
         });
     });
