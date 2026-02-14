@@ -369,6 +369,18 @@ section {
     border-radius: 50%;
 }
 
+.hero-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 40px); /* Adjust to fit inside the 10px inset */
+    height: calc(100% - 40px);
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 10;
+}
+
 @keyframes morph {
     0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
     50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
